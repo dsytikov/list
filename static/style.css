@@ -5,7 +5,7 @@ h1              { border-bottom: 2px solid #eee; }
 h2              { font-size: 1.2em; }
 
 table { border-collapse: separate; }
-thead { text-align: left; bgcolor: blue; }
+thead { text-align: left; background: #66f }
 td, th { paddind: 10px;}
 col#f { width: 150px; }
 col#i { width: 100px; }
