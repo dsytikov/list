@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<table>
+ {% for entry in entries %}   
+ <tr>
+    <td>Фамилия</td>
+    <td>{{ entry.f }}</td>
+ </tr>
+ <tr>
+    <td>Имя</td>
+    <td>{{ entry.i }}</td>
+ </tr>
+ <tr>
+    <td>Отчество</td>
+    <td>{{ entry.o }}</td>
+ </tr>
+ <tr>
+    <td>Компания</td>
+    <td>{{ entry.c }}</td>
+ </tr>
+ <tr>
+    <td>Табельный</td>
+    <td>{{ entry.t }}</td>
+ </tr>
+ <tr>
+    <td>Статус</td>
+    <td>{{ entry.s }}</td>
+ </tr>
+ {% endfor %}
+ {% endblock %}

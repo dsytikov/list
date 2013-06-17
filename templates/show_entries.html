@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Фамилия:
+        <dd><input type=text size=30 name=f>
+		<dt>Имя:
+        <dd><input type=text size=30 name=i>
+		<dt>Отчество:
+        <dd><input type=text size=30 name=o>
+		<dt>Компания:
+        <dd><input type=text size=30 name=c>
+		<dt>Табельный:
+        <dd><input type=text size=30 name=t>
+        <dt>Статус:
+        <dd><input type=text size=30 name=s>
+        <dd><input type=submit value=Записать>
+      </dl>
+    </form>
+  {% endif %}
+  <ul class=entries>
+  <table>
+	<colgroup>
+		<col id="f" />
+			<col id="i" />
+			<col id="o" />
+			<col id="c" />
+			<col id="t" />
+			<col id="s" />
+			<col id="id" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">Фамилия</th>
+				<th scope="col">Имя</th>
+				<th scope="col">Отчество</th>
+				<th scope="col">Компания</th>
+				<th scope="col">Табельный</th>
+				<th scope="col">Статус</th>
+		</tr>
+	</thead>
+	<tbody>
+  {% for entry in entries %}
+	<tr>
+	<td>{{ entry.f }}</td>
+	<td>{{ entry.i }}</td>
+	<td>{{ entry.o }}</td>
+	<td>{{ entry.c }}</td>
+	<td>{{ entry.t }}</td>
+	<td>{{ entry.s }}</td>
+	<td><a href="{{ url_for('show_detail', id = entry.id) }}">Подробнее</a></td>
+	<td><a href="">Редактировать</a></td>
+	</tr>
+  {% endfor %}
+	</tbody>
+  </table>
+  </ul>
+{% endblock %}
